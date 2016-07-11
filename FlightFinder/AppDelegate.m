@@ -155,44 +155,6 @@
     
     xpc_release(message_dict);
     
-    
-
-  /*
-    NSDictionary *multiplyData =
-    [NSDictionary dictionaryWithObjectsAndKeys:
-     @"buyTicket:onDate:withMaxCost:", @"operation",
-     [NSArray arrayWithObjects:
-      [_destination stringValue],
-      [_datePicker dateValue],
-      [NSNumber numberWithInteger:[_price integerValue]],
-      nil], @"args",
-     nil];
-    
-    [_mathConnection sendMessage:multiplyData];
-    
-    //setting weakSelf so that it does not lead to a retain cycle in block
-    __weak typeof(self) weakSelf = self;
-    
-    _mathConnection.eventHandler = ^(NSDictionary *message, XPCConnection *inConnection){
-        
-        NSNumber *retCode = [message objectForKey:@"returnCode"];
-        NSString *ticInfo = @"";
-        if (retCode.intValue == 0) {
-            
-            NSNumber *resPrice = [message objectForKey:@"resultData"];
-            ticInfo = [NSString stringWithFormat:@"Ticket found! Price: $%ld", resPrice.longValue];
-            
-        }else {
-            ticInfo = @"No ticket found.";
-        }
-
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [weakSelf.ticketInfo setStringValue:ticInfo];
-        }];
-        
-        
-    };*/
-
 }
 
 - (IBAction)getSpecialFlight:(id)sender {

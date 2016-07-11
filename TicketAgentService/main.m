@@ -131,54 +131,6 @@ static void new_connection_handler(xpc_connection_t peer) {
 int main(int argc, const char *argv[])
 {
     xpc_main(new_connection_handler);
-    /*
-    [XPCService runServiceWithConnectionHandler:^(XPCConnection *connection){
-        
-        [connection setEventHandler:^(NSDictionary *message, XPCConnection *connection){
-            
-            NSString *methodName = [message objectForKey:@"operation"];
-            
-            //if operation's value is empty or nil
-            if (!methodName.length) {
-                //Return a failure with returnCode -1
-                [connection sendMessage:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt: -1] forKey:@"returnCode"]];
-                return;
-            }
-            
-            TicketAgent *ticketAgent = [TicketAgent new];
-            
-            //if method's signature is in-valid
-            NSMethodSignature *signature  = [ticketAgent methodSignatureForSelector:NSSelectorFromString(methodName)];
-            if (!signature) {
-                [connection sendMessage:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt: -1] forKey:@"returnCode"]];
-                return;
-            }
-            
-            NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
-            
-            [invocation setTarget:ticketAgent];
-            [invocation setSelector:NSSelectorFromString(methodName)]; 
-            
-            NSArray *args = [message objectForKey:@"args"];
-            
-            if (args.count) {
-                for (int i = 0; i < args.count; i++ ){
-                    id object = [args objectAtIndex:i];
-                    [invocation setArgument:&object atIndex:i+2];
-                }
-            }
-            
-            [invocation invoke];
-            
-            void *resultData;
-            [invocation getReturnValue:&resultData];
-            NSDictionary *resData = (__bridge NSDictionary *)resultData;
-            
-            [connection sendMessage:resData];
-           
-        }];
-    }];
-     */
     
     return 0;
 }
