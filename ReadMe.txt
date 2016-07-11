@@ -17,8 +17,12 @@ Copyright (C) 2012 Apple Inc. All rights reserved.
 OSX - Supports 10.7 and later
 
 Refernces -
+https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man3/xpc.3.html
 https://developer.apple.com/library/prerelease/content/samplecode/FlightFinder/Introduction/Intro.html
 https://developer.apple.com/videos/play/wwdc2012/241/
 https://github.com/stevestreza/XPCKit/
 https://cocoapods.org/pods/XPCKit
+http://aron.cedercrantz.com/2011/12/17/convert-between-xpc-objects-and-objective-c/
+
+
 
